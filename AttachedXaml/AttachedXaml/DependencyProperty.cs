@@ -4,18 +4,22 @@ namespace AttachedXaml
 {
     public sealed class DependencyProperty
     {
+        public delegate void PropertyChangedCallback(DependencyProperty prop, object value);
+
         internal static ConcurrentDictionary<DependencyProperty, object> _values = new ConcurrentDictionary<DependencyProperty, object>();
 
         internal bool IsAttached{ get; set; }
         internal string Name { get; set; }
         internal bool IsReadOnly { get; set; }
         internal object DefaultValue { get; set; }
+        internal PropertyChangedCallback changedCallback;
 
-        public static DependencyProperty RegisterAttached(string name, object defaultValue = null)
+        public static DependencyProperty RegisterAttached(string name, object defaultValue = null, PropertyChangedCallback propertyChanged = null)
         {
             var p = new DependencyProperty();
             p.IsAttached = true;
             p.Name = name;
+            p.changedCallback = propertyChanged;
 
             _values.AddOrUpdate(p, defaultValue, (_, __) => defaultValue);
 
@@ -40,6 +44,7 @@ namespace AttachedXaml
             if (!prop.IsReadOnly)
             {
                 _values.AddOrUpdate(prop, value, (_, __) => value);
+                prop.changedCallback?.Invoke(prop, value);
             }
             else
             {
