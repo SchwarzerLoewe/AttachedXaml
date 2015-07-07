@@ -47,7 +47,7 @@ namespace AttachedXaml
             }
         }
 
-        public static object GetValue(DependencyProperty prop, object target)
+        public static object GetValue(DependencyProperty prop)
         {
             object val;
             if(_values.TryGetValue(prop, out val))
