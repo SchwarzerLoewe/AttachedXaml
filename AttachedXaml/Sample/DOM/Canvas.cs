@@ -5,7 +5,7 @@ using System.Windows.Markup;
 namespace Sample.DOM
 {
     [ContentProperty("Childs")]
-    public class Canvas
+    public class Canvas : DependencyObject
     {
         public List<Button> Childs { get; set; }
 
@@ -14,16 +14,16 @@ namespace Sample.DOM
             Childs = new List<Button>();
         }
 
-        //public static DependencyProperty TopProperty = DependencyProperty.RegisterAttached("Top", 0);
+        public static DependencyProperty TopProperty = DependencyProperty.RegisterAttached("Top", 0);
 
-        /*public static int GetTop(object target)
+        public static object GetTop(object target)
         {
-            return (int)DependencyProperty.GetValue(TopProperty);
+            return DependencyProperty.GetValue(TopProperty);
         }
 
         public static void SetTop(object target, int value)
         {
             DependencyProperty.SetValue(TopProperty, value);
-        }*/
+        }
     }
 }
