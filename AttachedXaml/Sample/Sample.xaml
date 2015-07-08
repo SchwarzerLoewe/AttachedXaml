@@ -1,3 +1,4 @@
-﻿<Canvas xmlns="http://sample.com/" xmlns:x="http://furesoft.org/schemas/2015/x">
-    <Button Canvas.Top="12" Content="{x:Null}" />
+﻿<Canvas xmlns="http://sample.com/">
+    <Button Canvas.Top="12" Content="WClick me" />
+    <Button Canvas.Top="3" />
 </Canvas>

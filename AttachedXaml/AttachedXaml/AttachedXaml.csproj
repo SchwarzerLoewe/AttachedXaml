@@ -41,11 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyAttributes.cs" />
     <Compile Include="DependencyException.cs" />
     <Compile Include="DependencyObject.cs" />
     <Compile Include="DependencyProperty.cs" />
-    <Compile Include="MarkupExtensions\Null.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

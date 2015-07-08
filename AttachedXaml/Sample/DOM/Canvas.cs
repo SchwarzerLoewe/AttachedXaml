@@ -16,12 +16,12 @@ namespace Sample.DOM
 
         public static DependencyProperty TopProperty = DependencyProperty.RegisterAttached("Top", 0);
 
-        public static object GetTop(object target)
+        public static object GetTop(DependencyObject target)
         {
             return DependencyProperty.GetValue(TopProperty);
         }
 
-        public static void SetTop(object target, int value)
+        public static void SetTop(DependencyObject target, int value)
         {
             DependencyProperty.SetValue(TopProperty, value);
         }
