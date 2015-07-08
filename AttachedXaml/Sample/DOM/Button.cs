@@ -4,7 +4,7 @@ using System.Windows.Markup;
 namespace Sample.DOM
 {
     [ContentProperty("Content")]
-    public class Button : DependencyObject
+    public class Button : FrameworkElement
     {
         public string Content { get; set; }
     }

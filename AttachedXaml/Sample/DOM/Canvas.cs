@@ -5,13 +5,13 @@ using System.Windows.Markup;
 namespace Sample.DOM
 {
     [ContentProperty("Childs")]
-    public class Canvas : DependencyObject
+    public class Canvas : FrameworkElement
     {
-        public List<Button> Childs { get; set; }
+        public List<FrameworkElement> Childs { get; set; }
 
         public Canvas()
         {
-            Childs = new List<Button>();
+            Childs = new List<FrameworkElement>();
         }
 
         public static DependencyProperty TopProperty = DependencyProperty.RegisterAttached("Top", 0);

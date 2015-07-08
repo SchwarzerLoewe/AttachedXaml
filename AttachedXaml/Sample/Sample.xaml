@@ -1,4 +1,4 @@
 ﻿<Canvas xmlns="http://sample.com/">
-    <Button Canvas.Top="12" Content="WClick me" />
-    <Button Canvas.Top="3" />
+    <Button Canvas.Top="12" Content="Click me" />
+    <Button Canvas.Top="3" Content="hello" />
 </Canvas>

@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="DOM\Button.cs" />
     <Compile Include="DOM\Canvas.cs" />
+    <Compile Include="FrameworkElement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
