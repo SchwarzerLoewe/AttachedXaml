@@ -2,6 +2,7 @@
 using Sample.DOM;
 using System;
 using System.Xaml;
+using System.Linq;
 
 namespace AttachedXaml.Tests
 {
@@ -14,6 +15,7 @@ namespace AttachedXaml.Tests
             var p = Environment.CurrentDirectory + "\\Sample.xaml";
 
             var result = ((Canvas)XamlServices.Load(p));
+            var v = result.Childs.First().GetValue(Canvas.TopProperty);
             result.SetValue(Canvas.TopProperty, 100);
         }
     }

@@ -1,30 +1,28 @@
 ﻿using AttachedXaml;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Windows.Markup;
 
 namespace Sample.DOM
 {
-    [ContentProperty("Childs")]
-    public class Canvas : FrameworkElement
+    [System.Windows.Markup.ContentProperty("Childs")]
+    public class Canvas : DependencyObject
     {
-        public List<FrameworkElement> Childs { get; set; }
+        public List<DependencyObject> Childs { get; set; }
 
         public Canvas()
         {
-            Childs = new List<FrameworkElement>();
+            Childs = new List<DependencyObject>();
         }
 
-        public static DependencyProperty TopProperty = DependencyProperty.RegisterAttached("Top", 0);
+        public static DependencyProperty TopProperty = DependencyProperty.RegisterAttached("Top", typeof(int), typeof(Canvas));
 
         public static object GetTop(DependencyObject target)
         {
-            return DependencyProperty.GetValue(TopProperty);
+            return target.GetValue(TopProperty);
         }
 
         public static void SetTop(DependencyObject target, int value)
         {
-            DependencyProperty.SetValue(TopProperty, value);
+            target.SetValue(TopProperty, value);
         }
     }
 }
